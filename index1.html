@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viery Octavianus — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+  <div class="noise"></div>
+  <div class="grid-bg"></div>
+  <canvas id="particle-canvas"></canvas>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo"><span class="logo-bracket">[</span><span class="logo-text">V.O.B</span><span class="logo-bracket">]</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-status"><span class="status-dot"></span><span>Available for work</span></div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-top-label"><span class="label-line"></span><span>Software Engineer · 3 Years Experience</span><span class="label-line"></span></div>
+
+    <!-- ===== VIERY CHARACTER ===== -->
+    <div class="viery-char" id="viery-char">
+      <!-- Head -->
+      <div class="char-head">
+        <div class="char-hair"></div>
+        <div class="char-face">
+          <div class="char-eye-wrap">
+            <div class="char-eye"><div class="char-pupil" id="pupil-l"></div></div>
+            <div class="char-eye"><div class="char-pupil" id="pupil-r"></div></div>
+          </div>
+          <div class="char-glasses">
+            <div class="gl-frame left"></div>
+            <div class="gl-bridge"></div>
+            <div class="gl-frame right"></div>
+          </div>
+          <div class="char-nose"></div>
+          <div class="char-mouth"></div>
+        </div>
+        <div class="char-ear left-ear"></div>
+        <div class="char-ear right-ear"></div>
+      </div>
+      <!-- Neck -->
+      <div class="char-neck"></div>
+      <!-- Body -->
+      <div class="char-torso">
+        <div class="char-suit">
+          <div class="suit-left"></div>
+          <div class="suit-right"></div>
+        </div>
+        <div class="char-shirt-inner"></div>
+        <div class="char-tie"></div>
+        <div class="char-badge-pin">DEV</div>
+        <!-- Left Arm -->
+        <div class="char-arm char-arm-l" id="arm-l">
+          <div class="char-elbow"></div>
+          <div class="char-forearm char-forearm-l">
+            <div class="char-hand">✋</div>
+          </div>
+        </div>
+        <!-- Right Arm -->
+        <div class="char-arm char-arm-r" id="arm-r">
+          <div class="char-elbow"></div>
+          <div class="char-forearm char-forearm-r">
+            <div class="char-hand">🤚</div>
+          </div>
+        </div>
+      </div>
+      <!-- Waist -->
+      <div class="char-waist">
+        <div class="char-belt"></div>
+      </div>
+      <!-- Legs -->
+      <div class="char-lower">
+        <div class="char-leg char-leg-l" id="leg-l">
+          <div class="char-shin char-shin-l">
+            <div class="char-shoe char-shoe-l"></div>
+          </div>
+        </div>
+        <div class="char-leg char-leg-r" id="leg-r">
+          <div class="char-shin char-shin-r">
+            <div class="char-shoe char-shoe-r"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Shadow -->
+      <div class="char-shadow-ground"></div>
+      <!-- Floating name tag -->
+      <div class="char-tag">
+        <div class="tag-name">Viery</div>
+        <div class="tag-role">Software Eng.</div>
+      </div>
+    </div>
+    <!-- END CHARACTER -->
+
+    <div class="hero-main">
+      <div class="hero-name-wrapper">
+        <div class="hero-eyebrow">Hello, I'm</div>
+        <h1 class="hero-name">
+          <span class="name-line" id="name1" data-text="VIERY">VIERY</span>
+          <span class="name-line accent" id="name2" data-text="OCTAVIANUS">OCTAVIANUS</span>
+        </h1>
+        <div class="hero-role">
+          <span class="role-tag">&lt;</span>
+          <span class="role-text" id="typewriter"></span>
+          <span class="cursor-blink">_</span>
+          <span class="role-tag">/&gt;</span>
+        </div>
+      </div>
+      <div class="hero-side">
+        <div class="hero-badge"><div class="badge-ring"></div><div class="badge-inner"><span class="badge-num">3+</span><span class="badge-label">Years<br/>Exp</span></div></div>
+        <div class="hero-stats">
+          <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Projects</span></div>
+          <div class="stat-item"><span class="stat-num">8+</span><span class="stat-label">Tech Stack</span></div>
+          <div class="stat-item"><span class="stat-num">2</span><span class="stat-label">Orgs</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <a href="#about" class="hero-cta"><span>Explore Portfolio</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+      <div class="hero-scroll-label">scroll to discover</div>
+    </div>
+    <div class="hero-glitch-text" aria-hidden="true">VIERY</div>
+  </section>
+
+  <!-- ===== LAPTOP SCROLL SECTION ===== -->
+  <section class="laptop-section" id="laptop-section">
+    <div class="laptop-sticky-wrap">
+      <div class="laptop-scene">
+
+        <!-- 3D Laptop -->
+        <div class="laptop-3d" id="laptop-3d">
+          <!-- Screen part (rotates) -->
+          <div class="laptop-lid" id="laptop-lid">
+            <div class="screen-outer">
+              <div class="screen-cam-dot"></div>
+              <div class="screen-display">
+                <div class="screen-phase" id="sphase-0">
+                  <div class="code-editor">
+                    <div class="editor-bar"><span class="edot r"></span><span class="edot y"></span><span class="edot g"></span><span class="etitle">viery.js — VSCode</span></div>
+                    <div class="editor-body">
+                      <div class="line-nums"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span></div>
+                      <div class="code-area">
+                        <div class="cl"><span class="ck">const</span> <span class="cv">viery</span> <span class="co">=</span> <span class="cb">{</span></div>
+                        <div class="cl ps"><span class="ck2">name</span><span class="co">:</span> <span class="cs">"Viery Octavianus"</span><span class="co">,</span></div>
+                        <div class="cl ps"><span class="ck2">role</span><span class="co">:</span> <span class="cs">"Software Engineer"</span><span class="co">,</span></div>
+                        <div class="cl ps"><span class="ck2">experience</span><span class="co">:</span> <span class="cn">3</span><span class="co">,</span></div>
+                        <div class="cl ps"><span class="ck2">university</span><span class="co">:</span> <span class="cs">"Binus University"</span><span class="co">,</span></div>
+                        <div class="cl ps"><span class="ck2">skills</span><span class="co">:</span> <span class="cb">[</span><span class="cs">"JS"</span><span class="co">,</span> <span class="cs">"React"</span><span class="co">,</span> <span class="cs">"Java"</span><span class="cb">]</span></div>
+                        <div class="cl"><span class="cb">}</span><span class="caret-blink">█</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="screen-phase hidden" id="sphase-1">
+                  <div class="terminal-view">
+                    <div class="editor-bar dark"><span class="edot r"></span><span class="edot y"></span><span class="edot g"></span><span class="etitle">bash — Terminal</span></div>
+                    <div class="term-content">
+                      <div class="term-line"><span class="term-p">viery@binus:~$</span> <span id="t-cmd"></span></div>
+                      <div id="t-out" class="term-out"></div>
+                      <div class="term-line mt"><span class="term-p">viery@binus:~$</span> <span class="tcursor">▌</span></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="screen-phase hidden" id="sphase-2">
+                  <div class="browser-view">
+                    <div class="browser-chrome"><div class="bchrome-url"><span>🔒</span> viery-portfolio.dev</div></div>
+                    <div class="browser-page">
+                      <div class="bp-hero">VIERY'S PORTFOLIO</div>
+                      <div class="bp-tags"><span>React</span><span>Laravel</span><span>Java</span></div>
+                      <div class="bp-bars">
+                        <div class="bp-bar" style="width:95%"><span>HTML/CSS</span></div>
+                        <div class="bp-bar" style="width:90%"><span>JavaScript</span></div>
+                        <div class="bp-bar" style="width:85%"><span>Java</span></div>
+                        <div class="bp-bar" style="width:80%"><span>React</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Base part -->
+          <div class="laptop-base">
+            <div class="base-surface">
+              <div class="base-keyboard">
+                <div class="kb-r"><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div></div>
+                <div class="kb-r"><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div></div>
+                <div class="kb-r"><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div><div class="kk"></div></div>
+                <div class="kb-r"><div class="kk spacebar"></div></div>
+              </div>
+              <div class="base-trackpad"></div>
+            </div>
+            <div class="base-edge"></div>
+          </div>
+          <!-- Glow reflection -->
+          <div class="laptop-glow" id="laptop-glow"></div>
+        </div>
+
+        <!-- Text panel beside laptop -->
+        <div class="laptop-text" id="laptop-text">
+          <div class="lt-item visible" id="lt-0">
+            <div class="lt-tag">01 / Build</div>
+            <h2 class="lt-title">Clean Code<br/><span class="title-accent">Architecture</span></h2>
+            <p class="lt-desc">Crafting elegant, scalable solutions that stand the test of time — every line of code intentional.</p>
+          </div>
+          <div class="lt-item" id="lt-1">
+            <div class="lt-tag">02 / Deploy</div>
+            <h2 class="lt-title">Seamless<br/><span class="title-accent">Deployment</span></h2>
+            <p class="lt-desc">From dev to production with confidence — efficient workflows, rapid iteration, zero downtime.</p>
+          </div>
+          <div class="lt-item" id="lt-2">
+            <div class="lt-tag">03 / Ship</div>
+            <h2 class="lt-title">Beautiful<br/><span class="title-accent">Products</span></h2>
+            <p class="lt-desc">Crafting interfaces users love — where function meets stunning visual design and great UX.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="laptop-spacer"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="section-tag">02 / About</div>
+      <div class="about-grid">
+        <div class="about-left">
+          <h2 class="section-title"><span>Crafting</span><span class="title-accent">Digital</span><span>Experiences</span></h2>
+          <!-- Mini Viery walking character -->
+          <div class="mini-char-wrap" id="mini-char-wrap">
+            <div class="mini-viery" id="mini-viery">
+              <div class="mv-head">
+                <div class="mv-hair"></div>
+                <div class="mv-face">
+                  <div class="mv-glasses"></div>
+                  <div class="mv-smile"></div>
+                </div>
+              </div>
+              <div class="mv-body">
+                <div class="mv-suit">
+                  <div class="mvs-l"></div><div class="mvs-r"></div>
+                </div>
+                <div class="mv-shirt"></div>
+                <div class="mv-tie"></div>
+                <div class="mv-arm mv-arm-l" id="mval"></div>
+                <div class="mv-arm mv-arm-r" id="mvar"></div>
+              </div>
+              <div class="mv-legs">
+                <div class="mv-leg mv-leg-l" id="mvll"><div class="mv-shoe"></div></div>
+                <div class="mv-leg mv-leg-r" id="mvlr"><div class="mv-shoe"></div></div>
+              </div>
+              <div class="mv-shadow"></div>
+            </div>
+            <div class="mini-char-rings">
+              <div class="ring ring-1"></div>
+              <div class="ring ring-2"></div>
+              <div class="ring ring-3"></div>
+            </div>
+          </div>
+        </div>
+        <div class="about-right">
+          <p class="about-text lead rup">Allow me to introduce myself — I'm <strong>Viery Octavianus Biliam</strong>, a passionate Software Engineer with 3 years of hands-on experience building modern web and application solutions.</p>
+          <p class="about-text rup">Currently a fifth-semester Computer Science student at <span class="highlight">Bina Nusantara University</span>. Beyond academics, I'm actively involved in a Christian organization where I lead public relations and documentation.</p>
+          <p class="about-text rup">When I'm not pushing code, you'll find me on the <span class="highlight">badminton</span> or <span class="highlight">basketball</span> court, or deep in a personal project.</p>
+          <div class="about-interests">
+            <div class="interest-tag rup">Web Developer</div>
+            <div class="interest-tag rup">App Developer</div>
+            <div class="interest-tag rup">Front-end Dev</div>
+            <div class="interest-tag rup">Programming</div>
+            <div class="interest-tag rup">Sports</div>
+            <div class="interest-tag rup">Technology</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-dark" id="skills">
+    <div class="section-inner">
+      <div class="section-tag">03 / Skills</div>
+      <h2 class="section-title centered"><span>Tech</span><span class="title-accent">Stack</span></h2>
+      <div class="skills-grid">
+        <div class="skill-card rup"><div class="skill-icon">☕</div><span class="skill-name">Java</span><div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div></div>
+        <div class="skill-card rup"><div class="skill-icon" style="font-family:var(--font-mono);font-size:.8rem">JS</div><span class="skill-name">JavaScript</span><div class="skill-bar"><div class="skill-fill" style="--w:90%"></div></div></div>
+        <div class="skill-card rup"><div class="skill-icon">⚛</div><span class="skill-name">React</span><div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div></div>
+        <div class="skill-card rup"><div class="skill-icon">🐘</div><span class="skill-name">PHP</span><div class="skill-bar"><div class="skill-fill" style="--w:82%"></div></div></div>
+        <div class="skill-card rup"><div class="skill-icon" style="font-size:.75rem;font-family:var(--font-mono)">LRV</div><span class="skill-name">Laravel</span><div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div></div>
+        <div class="skill-card rup"><div class="skill-icon">🐍</div><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div></div>
+        <div class="skill-card rup"><div class="skill-icon" style="font-size:.7rem;font-family:var(--font-mono)">HTML</div><span class="skill-name">HTML / CSS</span><div class="skill-bar"><div class="skill-fill" style="--w:95%"></div></div></div>
+        <div class="skill-card rup"><div class="skill-icon" style="font-size:.7rem;font-family:var(--font-mono)">SQL</div><span class="skill-name">MySQL</span><div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div></div>
+        <div class="skill-card rup"><div class="skill-icon" style="font-size:.7rem;font-family:var(--font-mono)">.NET</div><span class="skill-name">ASP.NET</span><div class="skill-bar"><div class="skill-fill" style="--w:72%"></div></div></div>
+        <div class="skill-card rup"><div class="skill-icon" style="font-size:.65rem;font-family:var(--font-mono)">PSQL</div><span class="skill-name">PostgreSQL</span><div class="skill-bar"><div class="skill-fill" style="--w:73%"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="section-inner">
+      <div class="section-tag">04 / Education</div>
+      <h2 class="section-title"><span>Education</span><span class="title-accent">History</span></h2>
+      <div class="timeline">
+        <div class="timeline-item rl"><div class="timeline-dot"><div class="dot-inner"></div></div><div class="timeline-content"><div class="timeline-year">2009 — 2015</div><h3 class="timeline-title">Penabur Metro Elementary School</h3><p class="timeline-desc">Foundation of academic journey and early education</p></div></div>
+        <div class="timeline-item rl"><div class="timeline-dot"><div class="dot-inner"></div></div><div class="timeline-content"><div class="timeline-year">2015 — 2018</div><h3 class="timeline-title">Xaverius Metro Junior High School</h3><p class="timeline-desc">Developed critical thinking and academic excellence</p></div></div>
+        <div class="timeline-item rl"><div class="timeline-dot"><div class="dot-inner"></div></div><div class="timeline-content"><div class="timeline-year">2018 — 2021</div><h3 class="timeline-title">Christian High School 1 Metro</h3><p class="timeline-desc">Strengthened scientific foundation and leadership</p></div></div>
+        <div class="timeline-item active rl"><div class="timeline-dot"><div class="dot-inner"></div></div><div class="timeline-content"><div class="timeline-year">2021 — 2025</div><h3 class="timeline-title">Bina Nusantara University</h3><p class="timeline-desc">Bachelor's in Computer Science — building the future through code</p><div class="timeline-badge">Current</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section section-dark" id="experience">
+    <div class="section-inner">
+      <div class="section-tag">05 / Experience</div>
+      <h2 class="section-title centered"><span>Organization</span><span class="title-accent">Experience</span></h2>
+      <div class="exp-grid">
+        <div class="exp-card rup"><div class="exp-card-top"><div class="exp-icon">🏛</div><div class="exp-label">Activist</div></div><h3 class="exp-title">Persekutuan Oikumune</h3><p class="exp-org">Bina Nusantara University</p><ul class="exp-list"><li>Public Relations & Documentation</li><li>Created worship presentations</li><li>Designed event themes</li><li>Led welcoming party activities</li></ul></div>
+        <div class="exp-card rup"><div class="exp-card-top"><div class="exp-icon">🏸</div><div class="exp-label">Member</div></div><h3 class="exp-title">Binus Badminton</h3><p class="exp-org">Bina Nusantara University</p><ul class="exp-list"><li>Active sports community member</li><li>Team coordination & participation</li><li>Competitive badminton events</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-inner">
+      <div class="section-tag">06 / Contact</div>
+      <div class="contact-wrap">
+        <h2 class="contact-title">Let's<br/><span class="title-accent">Connect</span></h2>
+        <p class="contact-sub">Open to opportunities, collaborations, and new adventures in tech.</p>
+        <div class="contact-links">
+          <a href="mailto:viery@email.com" class="contact-link rup"><div class="cli">✉</div><span>Email</span><div class="cla">→</div></a>
+          <a href="#" class="contact-link rup"><div class="cli">in</div><span>LinkedIn</span><div class="cla">→</div></a>
+          <a href="#" class="contact-link rup"><div class="cli">gh</div><span>GitHub</span><div class="cla">→</div></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left"><span class="logo-bracket">[</span><span>V.O.B</span><span class="logo-bracket">]</span><span class="footer-copy">© 2024 Viery Octavianus Biliam</span></div>
+      <div class="footer-right">Software Engineer · Computer Science · Binus University</div>
+    </div>
+  </footer>
+
+<script>
+// ---- PARTICLE CANVAS ----
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
+let W = canvas.width = window.innerWidth;
+let H = canvas.height = window.innerHeight;
+window.addEventListener('resize', () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; });
+const pts = Array.from({length:80}, () => ({
+  x: Math.random()*W, y: Math.random()*H,
+  vx:(Math.random()-.5)*.4, vy:(Math.random()-.5)*.4,
+  r: Math.random()*1.5+.3, a:Math.random()*.5+.1
+}));
+let mX=W/2, mY=H/2;
+document.addEventListener('mousemove', e=>{mX=e.clientX;mY=e.clientY;});
+(function pAnim(){
+  ctx.clearRect(0,0,W,H);
+  pts.forEach((p,i)=>{
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0)p.x=W; if(p.x>W)p.x=0;
+    if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+    const dm=Math.hypot(p.x-mX,p.y-mY);
+    if(dm<100){const a=Math.atan2(p.y-mY,p.x-mX);p.vx+=Math.cos(a)*.04;p.vy+=Math.sin(a)*.04;}
+    else{p.vx*=.99;p.vy*=.99;}
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(99,102,241,${p.a})`;ctx.fill();
+    for(let j=i+1;j<pts.length;j++){
+      const q=pts[j], d=Math.hypot(p.x-q.x,p.y-q.y);
+      if(d<110){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=`rgba(99,102,241,${.07*(1-d/110)})`;ctx.lineWidth=.5;ctx.stroke();}
+    }
+  });
+  requestAnimationFrame(pAnim);
+})();
+
+// ---- CURSOR ----
+const cur = document.getElementById('cursor'), fol = document.getElementById('cursor-follower');
+let fx=0, fy=0;
+document.addEventListener('mousemove',e=>{mX=e.clientX;mY=e.clientY;cur.style.left=mX+'px';cur.style.top=mY+'px';});
+(function fa(){fx+=(mX-fx)*.1;fy+=(mY-fy)*.1;fol.style.left=fx+'px';fol.style.top=fy+'px';requestAnimationFrame(fa);})();
+document.querySelectorAll('a,button,.skill-card,.exp-card,.contact-link').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.classList.add('hover');fol.classList.add('hover');});
+  el.addEventListener('mouseleave',()=>{cur.classList.remove('hover');fol.classList.remove('hover');});
+});
+
+// ---- TYPEWRITER ----
+const roles=['Software Engineer','Web Developer','Front-end Dev','Full Stack Dev'];
+let ri=0,ci=0,del=false;
+const tw=document.getElementById('typewriter');
+function type(){
+  const c=roles[ri];
+  if(!del){tw.textContent=c.slice(0,ci+1);ci++;if(ci===c.length){del=true;setTimeout(type,1800);return;}}
+  else{tw.textContent=c.slice(0,ci-1);ci--;if(ci===0){del=false;ri=(ri+1)%roles.length;}}
+  setTimeout(type,del?55:95);
+}
+type();
+
+// ---- NAV ----
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50));
+
+// ---- VIERY CHARACTER ----
+const charEl = document.getElementById('viery-char');
+const legL = document.getElementById('leg-l'), legR = document.getElementById('leg-r');
+const armL = document.getElementById('arm-l'), armR = document.getElementById('arm-r');
+let walkPhase=0, walking=false, walkTimer;
+
+function walkStep(){
+  walkPhase+=0.15;
+  legL.style.transform=`rotate(${Math.sin(walkPhase)*20}deg)`;
+  legR.style.transform=`rotate(${Math.sin(walkPhase+Math.PI)*20}deg)`;
+  armL.style.transform=`rotate(${Math.sin(walkPhase+Math.PI)*14}deg)`;
+  armR.style.transform=`rotate(${Math.sin(walkPhase)*14}deg)`;
+  // Bob body
+  charEl.querySelector('.char-torso').style.transform=`translateY(${Math.sin(walkPhase*2)*2}px)`;
+  if(walking) requestAnimationFrame(walkStep);
+  else{legL.style.transform='';legR.style.transform='';armL.style.transform='';armR.style.transform='';}
+}
+
+let lastSY=0;
+window.addEventListener('scroll',()=>{
+  const sy=window.scrollY;
+  // Float with scroll
+  charEl.style.transform=`translateY(${Math.sin(sy*.008)*10}px)`;
+  // Walk when scrolling
+  clearTimeout(walkTimer);
+  if(Math.abs(sy-lastSY)>2&&!walking){walking=true;walkStep();}
+  walkTimer=setTimeout(()=>{walking=false;},300);
+  lastSY=sy;
+});
+
+// Eye tracking
+document.addEventListener('mousemove',e=>{
+  [document.getElementById('pupil-l'),document.getElementById('pupil-r')].forEach(p=>{
+    if(!p)return;
+    const r=p.parentElement.getBoundingClientRect();
+    const cx=r.left+r.width/2, cy=r.top+r.height/2;
+    const angle=Math.atan2(e.clientY-cy,e.clientX-cx);
+    const dist=Math.min(3,Math.hypot(e.clientX-cx,e.clientY-cy)/25);
+    p.style.transform=`translate(${Math.cos(angle)*dist}px,${Math.sin(angle)*dist}px)`;
+  });
+});
+
+// Character hover wiggle
+charEl.addEventListener('mouseenter',()=>{
+  charEl.style.animation='charWiggle .4s ease';
+  setTimeout(()=>charEl.style.animation='',400);
+});
+
+// ---- LAPTOP SCROLL ----
+const ltSection = document.getElementById('laptop-section');
+const laptop3d = document.getElementById('laptop-3d');
+const laptopLid = document.getElementById('laptop-lid');
+const sphases = [document.getElementById('sphase-0'),document.getElementById('sphase-1'),document.getElementById('sphase-2')];
+const ltItems = [document.getElementById('lt-0'),document.getElementById('lt-1'),document.getElementById('lt-2')];
+let curPhase=-1;
+
+// Terminal typing
+const tcmds=['git commit -m "feat: new feature"','npm run build && npm start','code . && npm run dev'];
+const touts=[['[main 4f2a8b1] feat: new feature','1 file changed, 42 insertions(+)'],['> Building...','✓ Build complete! 2.4s','✓ Server running :3000'],['Opening VSCode...','> Dev server ready','✓ localhost:3000']];
+let termRunning=false;
+function runTerminal(idx){
+  if(termRunning)return;
+  termRunning=true;
+  const tc=document.getElementById('t-cmd'), to=document.getElementById('t-out');
+  if(!tc||!to)return;
+  tc.textContent='';to.innerHTML='';
+  const cmd=tcmds[idx%tcmds.length]; let i=0;
+  const iv=setInterval(()=>{
+    tc.textContent+=cmd[i++];
+    if(i>=cmd.length){clearInterval(iv);
+      touts[idx%touts.length].forEach((line,li)=>{
+        setTimeout(()=>{const d=document.createElement('div');d.textContent=line;d.className='tout-line';to.appendChild(d);},li*350);
+      });
+      setTimeout(()=>termRunning=false,2000);
+    }
+  },55);
+}
+
+function setPhase(p){
+  if(p===curPhase||p<0||p>2)return;
+  sphases.forEach((s,i)=>s.classList.toggle('hidden',i!==p));
+  ltItems.forEach((l,i)=>{l.classList.toggle('visible',i===p);});
+  curPhase=p;
+  if(p===1)setTimeout(()=>runTerminal(Math.floor(Math.random()*3)),200);
+}
+setPhase(0);
+
+window.addEventListener('scroll',()=>{
+  const rect=ltSection.getBoundingClientRect();
+  const spacerH=ltSection.offsetHeight-window.innerHeight;
+  const scrolled=-rect.top;
+  const prog=Math.max(0,Math.min(1,scrolled/spacerH));
+
+  // Lid open: 0→0.25 of scroll = opens lid
+  const openProg=Math.min(1,prog/0.25);
+  // -115 = closed, 0 = fully open
+  const lidAngle=-115+openProg*115;
+  laptopLid.style.transform=`rotateX(${lidAngle}deg)`;
+
+  // 3D tilt whole laptop
+  const tiltX=20-prog*35;
+  const swayY=Math.sin(prog*Math.PI*1.5)*15;
+  const sc=0.75+openProg*0.25;
+  laptop3d.style.transform=`perspective(1400px) rotateX(${tiltX}deg) rotateY(${swayY}deg) scale(${sc})`;
+
+  // Glow color follows phase
+  const g=document.getElementById('laptop-glow');
+  if(g){const hue=prog*60+200;g.style.background=`radial-gradient(circle, hsla(${hue},80%,60%,0.15) 0%, transparent 70%)`;}
+
+  // Switch content phases
+  if(prog<.33)setPhase(0);
+  else if(prog<.67)setPhase(1);
+  else setPhase(2);
+});
+
+// ---- MINI VIERY (about section) ----
+const mvll=document.getElementById('mvll'),mvlr=document.getElementById('mvlr');
+const mval=document.getElementById('mval'),mvar=document.getElementById('mvar');
+let mvPhase=0, mvWalking=false;
+function mvWalk(){
+  mvPhase+=0.12;
+  mvll.style.transform=`rotate(${Math.sin(mvPhase)*22}deg)`;
+  mvlr.style.transform=`rotate(${Math.sin(mvPhase+Math.PI)*22}deg)`;
+  mval.style.transform=`rotate(${Math.sin(mvPhase+Math.PI)*16}deg)`;
+  mvar.style.transform=`rotate(${Math.sin(mvPhase)*16}deg)`;
+  if(mvWalking)requestAnimationFrame(mvWalk);
+  else{mvll.style.transform='';mvlr.style.transform='';mval.style.transform='';mvar.style.transform='';}
+}
+const aboutObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      if(!mvWalking){mvWalking=true;mvWalk();}
+      document.getElementById('mini-viery').classList.add('mini-bounce');
+      setTimeout(()=>{mvWalking=false;document.getElementById('mini-viery').classList.remove('mini-bounce');},3500);
+    }
+  });
+},{threshold:.4});
+const aboutSec=document.getElementById('about');
+if(aboutSec)aboutObs.observe(aboutSec);
+
+// ---- SCROLL REVEAL ----
+const revObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:.1});
+document.querySelectorAll('.rup,.rl,.skill-card,.exp-card,.contact-link,.about-text,.interest-tag,.timeline-item').forEach(el=>revObs.observe(el));
+
+// ---- SKILL BARS ----
+const sbObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.querySelectorAll('.skill-fill').forEach(b=>{const m=b.style.cssText.match(/--w:\s*([^;]+)/);if(m)b.style.width=m[1];});});
+},{threshold:.3});
+document.querySelectorAll('.skills-grid').forEach(el=>sbObs.observe(el));
+
+// ---- SKILL CARD 3D TILT ----
+document.querySelectorAll('.skill-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`perspective(600px) rotateY(${x*20}deg) rotateX(${-y*20}deg) translateY(-8px) scale(1.02)`;
+  });
+  card.addEventListener('mouseleave',()=>card.style.transform='');
+});
+
+// ---- ORB PARALLAX ----
+document.addEventListener('mousemove',e=>{
+  const x=(e.clientX/W-.5)*25, y=(e.clientY/H-.5)*25;
+  document.querySelector('.orb-1').style.transform=`translate(${x}px,${y}px)`;
+  document.querySelector('.orb-2').style.transform=`translate(${-x*.7}px,${-y*.7}px)`;
+  document.querySelector('.orb-3').style.transform=`translate(${x*.4}px,${y*.4}px)`;
+});
+
+// ---- HERO NAME PARALLAX ----
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  const n1=document.getElementById('name1'),n2=document.getElementById('name2');
+  if(n1)n1.style.transform=`translateX(${-y*.07}px)`;
+  if(n2)n2.style.transform=`translateX(${y*.05}px)`;
+});
+
+// ---- CLICK SPARKS ----
+document.addEventListener('click',e=>{
+  for(let i=0;i<12;i++){
+    const s=document.createElement('div');
+    s.className='spark';
+    const angle=Math.random()*Math.PI*2, dist=40+Math.random()*80;
+    s.style.cssText=`position:fixed;left:${e.clientX}px;top:${e.clientY}px;width:${3+Math.random()*4}px;height:${3+Math.random()*4}px;border-radius:50%;pointer-events:none;z-index:9999;background:hsl(${200+Math.random()*80},100%,70%);transform:translate(-50%,-50%);animation:sparkFly .6s ease forwards;--dx:${Math.cos(angle)*dist}px;--dy:${Math.sin(angle)*dist}px;`;
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),650);
+  }
+});
+</script>
+
+<style>
+@keyframes sparkFly{0%{opacity:1;transform:translate(-50%,-50%) translate(0,0) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) translate(var(--dx),var(--dy)) scale(0)}}
+@keyframes charWiggle{0%{transform:rotate(0)}25%{transform:rotate(-5deg)}75%{transform:rotate(5deg)}100%{transform:rotate(0)}}
+</style>
+</body>
+</html>
